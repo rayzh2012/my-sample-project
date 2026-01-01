@@ -1,0 +1,8 @@
+# Python 依赖包列表
+# 此项目当前不需要任何外部依赖包，仅使用Python标准库
+
+# 如果将来需要添加依赖，请按以下格式添加：
+# package-name==version
+# 例如：
+# numpy==1.21.0
+# requests==2.26.0
