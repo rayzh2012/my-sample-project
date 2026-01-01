@@ -16,7 +16,8 @@ class TestAIResearchExamples(unittest.TestCase):
         result = subprocess.run(
             [sys.executable, 'ai_research_example_1_attention.py'],
             capture_output=True,
-            text=True
+            text=True,
+            timeout=30
         )
         self.assertEqual(result.returncode, 0, 
                         f"Attention example failed: {result.stderr}")
@@ -27,7 +28,8 @@ class TestAIResearchExamples(unittest.TestCase):
         result = subprocess.run(
             [sys.executable, 'ai_research_example_2_gradient_descent.py'],
             capture_output=True,
-            text=True
+            text=True,
+            timeout=30
         )
         self.assertEqual(result.returncode, 0,
                         f"Gradient descent example failed: {result.stderr}")
@@ -38,7 +40,8 @@ class TestAIResearchExamples(unittest.TestCase):
         result = subprocess.run(
             [sys.executable, 'ai_research_example_3_neural_network.py'],
             capture_output=True,
-            text=True
+            text=True,
+            timeout=30
         )
         self.assertEqual(result.returncode, 0,
                         f"Neural network example failed: {result.stderr}")
@@ -49,7 +52,8 @@ class TestAIResearchExamples(unittest.TestCase):
         result = subprocess.run(
             [sys.executable, 'ai_research_example_4_softmax_loss.py'],
             capture_output=True,
-            text=True
+            text=True,
+            timeout=30
         )
         self.assertEqual(result.returncode, 0,
                         f"Softmax/loss example failed: {result.stderr}")

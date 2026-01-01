@@ -85,7 +85,8 @@ def simulate_classification():
     logits = np.random.randn(batch_size, num_classes)
     
     # Generate sample ground truth labels (one-hot encoded)
-    true_labels = np.array([0, 1, 2, 0, 1])  # Class indices
+    # Use random choice with fixed seed for reproducible results
+    true_labels = np.random.choice(num_classes, batch_size)
     targets = np.zeros((batch_size, num_classes))
     targets[np.arange(batch_size), true_labels] = 1
     

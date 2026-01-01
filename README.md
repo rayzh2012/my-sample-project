@@ -70,7 +70,7 @@ python -m unittest test_ai_research_examples.py
 1. 确保您的系统已安装Python 3.x
 2. 安装依赖：
    ```bash
-   pip install numpy
+   pip install -r requirements.txt
    ```
 3. 运行计算器程序：
    ```bash
@@ -92,6 +92,7 @@ my-sample-project/
 ├── ai_research_example_3_neural_network.py    # AI示例3: 神经网络
 ├── ai_research_example_4_softmax_loss.py      # AI示例4: Softmax损失
 ├── test_ai_research_examples.py         # AI示例测试
+├── requirements.txt                     # Python依赖包列表
 ├── README.md                            # 项目说明文档
 └── .gitignore                          # Git忽略文件配置
 ```
