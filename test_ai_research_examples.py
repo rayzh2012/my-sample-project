@@ -58,6 +58,42 @@ class TestAIResearchExamples(unittest.TestCase):
         self.assertEqual(result.returncode, 0,
                         f"Softmax/loss example failed: {result.stderr}")
         self.assertIn("Softmax and cross-entropy work correctly", result.stdout)
+    
+    def test_layer_norm(self):
+        """Test that layer normalization example runs successfully"""
+        result = subprocess.run(
+            [sys.executable, 'ai_research_example_5_layer_norm.py'],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        self.assertEqual(result.returncode, 0,
+                        f"Layer norm example failed: {result.stderr}")
+        self.assertIn("Layer normalization works correctly", result.stdout)
+    
+    def test_moe_routing(self):
+        """Test that MoE routing example runs successfully"""
+        result = subprocess.run(
+            [sys.executable, 'ai_research_example_6_moe_routing.py'],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        self.assertEqual(result.returncode, 0,
+                        f"MoE routing example failed: {result.stderr}")
+        self.assertIn("MoE routing works correctly", result.stdout)
+    
+    def test_rope(self):
+        """Test that RoPE example runs successfully"""
+        result = subprocess.run(
+            [sys.executable, 'ai_research_example_7_rope.py'],
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        self.assertEqual(result.returncode, 0,
+                        f"RoPE example failed: {result.stderr}")
+        self.assertIn("Rotary Position Embeddings work correctly", result.stdout)
 
 if __name__ == "__main__":
     unittest.main()

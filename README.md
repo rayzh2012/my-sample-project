@@ -12,7 +12,7 @@
 
 ## AI研究示例
 
-本项目包含4个AI研究示例，每个示例都复现了重要的AI研究概念并快速验证结果：
+本项目包含7个AI研究示例，每个示例都复现了重要的AI研究概念并快速验证结果：
 
 ### 1. 注意力机制 (Attention Mechanism)
 - 文件: `ai_research_example_1_attention.py`
@@ -50,6 +50,35 @@
   - 所有概率在[0,1]范围内
   - 完美预测的损失接近0
 
+### 5. 层归一化 (Layer Normalization) - 2023
+- 文件: `ai_research_example_5_layer_norm.py`
+- 复现: 现代Transformer中的层归一化
+- 论文参考: "Layer Normalization" (Ba et al., 2016)
+- 应用: GPT-3, GPT-4, Claude等所有现代LLMs
+- 验证内容:
+  - 输出均值接近0
+  - 输出标准差接近1
+  - 数值稳定性
+
+### 6. 专家混合路由 (Mixture of Experts Routing) - 2024
+- 文件: `ai_research_example_6_moe_routing.py`
+- 复现: MoE模型中的Top-K专家选择
+- 应用: Mixtral, GPT-4架构 (2024)
+- 验证内容:
+  - 每个token分配给正确数量的专家
+  - 专家权重归一化
+  - 负载均衡统计
+
+### 7. 旋转位置编码 (Rotary Position Embeddings - RoPE) - 2025
+- 文件: `ai_research_example_7_rope.py`
+- 复现: RoPE位置编码机制
+- 论文参考: "RoFormer" (Su et al., 2021)
+- 应用: LLaMA, Mistral, Qwen等2024-2025年主流开源LLMs
+- 验证内容:
+  - 向量长度保持不变
+  - 相对位置编码生效
+  - 数值稳定性
+
 ### 运行AI研究示例
 
 ```bash
@@ -58,6 +87,9 @@ python ai_research_example_1_attention.py
 python ai_research_example_2_gradient_descent.py
 python ai_research_example_3_neural_network.py
 python ai_research_example_4_softmax_loss.py
+python ai_research_example_5_layer_norm.py
+python ai_research_example_6_moe_routing.py
+python ai_research_example_7_rope.py
 
 # 运行所有测试（包括AI研究示例测试）
 python -m unittest test_ai_research_examples.py
@@ -91,6 +123,9 @@ my-sample-project/
 ├── ai_research_example_2_gradient_descent.py  # AI示例2: 梯度下降
 ├── ai_research_example_3_neural_network.py    # AI示例3: 神经网络
 ├── ai_research_example_4_softmax_loss.py      # AI示例4: Softmax损失
+├── ai_research_example_5_layer_norm.py        # AI示例5: 层归一化 (2023)
+├── ai_research_example_6_moe_routing.py       # AI示例6: MoE路由 (2024)
+├── ai_research_example_7_rope.py              # AI示例7: RoPE位置编码 (2025)
 ├── test_ai_research_examples.py         # AI示例测试
 ├── requirements.txt                     # Python依赖包列表
 ├── README.md                            # 项目说明文档
