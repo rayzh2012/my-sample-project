@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Tests for AI Research Examples
-Validates that all 4 AI research examples run correctly
+Validates that all 7 AI research examples run correctly
 """
 
 import unittest

@@ -59,21 +59,19 @@ def apply_rotary_embedding(x, cos, sin):
     """
     batch_size, seq_len, dim = x.shape
     
-    # Split into even and odd indices
+    # Split into even and odd indices (pairs)
     x1 = x[..., 0::2]  # Even indices
     x2 = x[..., 1::2]  # Odd indices
     
     cos = cos[:seq_len]
     sin = sin[:seq_len]
-    cos1 = cos[..., 0::2]
-    cos2 = cos[..., 1::2]
-    sin1 = sin[..., 0::2]
-    sin2 = sin[..., 1::2]
+    cos_even = cos[..., 0::2]
+    sin_even = sin[..., 0::2]
     
-    # Apply rotation
-    # This is equivalent to rotating pairs of elements
-    rotated1 = x1 * cos1 - x2 * sin1
-    rotated2 = x1 * sin2 + x2 * cos2
+    # Apply rotation formula: proper 2D rotation for each pair
+    # For 2D rotation: (x1', x2') = (x1*cos - x2*sin, x1*sin + x2*cos)
+    rotated1 = x1 * cos_even - x2 * sin_even
+    rotated2 = x1 * sin_even + x2 * cos_even
     
     # Interleave back
     x_rotated = np.zeros_like(x)
