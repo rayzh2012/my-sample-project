@@ -22,7 +22,7 @@
 ## 项目结构
 
 ```
-my-sample-project/
+ai-agent-assisted-code-base/
 ├── main.py          # 主程序文件
 ├── README.md        # 项目说明文档
 ├── requirements.txt # 依赖包列表
